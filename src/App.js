@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Modal from './components/UI/Modal/Modal';
+import ShowBtn from './components/UI/Buttons/ShowBtn';
+
 
 function App() {
+  const [purchasing, setPurchasing] = useState(false);
+
+  const purchaseHandler = () => {
+    setPurchasing(true);
+  };
+
+  const cancelPurchaseHandler = () => {
+    setPurchasing(false);
+  };
+
+  const continuePurchaseHandler = () => {
+    alert('pressed continue');
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ShowBtn onClickBtn={purchaseHandler}/>
+      <Modal
+        show={purchasing}
+        title={"Modal title"}
+        text={"Modal content"}
+        close={cancelPurchaseHandler}
+        onCancel={cancelPurchaseHandler}
+        onContinue={continuePurchaseHandler}
+        config={[
+          { type: 'Success', label: 'Continue', clicked: continuePurchaseHandler },
+          { type: 'Danger', label: 'Close', clicked: cancelPurchaseHandler }
+        ]}
+      >
+      </Modal>
     </div>
   );
 }
