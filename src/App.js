@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Modal from './components/UI/Modal/Modal';
 import ShowBtn from './components/UI/Buttons/ShowBtn';
+import Alert from './components/UI/Alert/Alert';
 
 
 function App() {
@@ -19,9 +20,13 @@ function App() {
     alert('pressed continue');
   };
 
+  const dismiss = () => {
+   alert('awe')
+  }
+
   return (
     <div className="App">
-      <ShowBtn onClickBtn={purchaseHandler}/>
+      <ShowBtn onClickBtn={purchaseHandler} />
       <Modal
         show={purchasing}
         title={"Modal title"}
@@ -35,6 +40,12 @@ function App() {
         ]}
       >
       </Modal>
+      <Alert
+        show={purchasing}
+        type='warning'
+        dismiss={dismiss}
+        close={cancelPurchaseHandler}
+      />
     </div>
   );
 }

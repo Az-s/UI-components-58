@@ -1,0 +1,37 @@
+.Alert {
+    margin: 20% auto;
+    position: fixed;
+    z-index: 500;
+    width: 70%;
+    left: 15%;
+    top: 30%;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    display: grid;
+    grid-template-columns: auto 30px;
+    border-radius: 5px;
+}
+
+.Alert .warning {
+    background-color: rgb(175, 82, 82);
+    padding: 10px;
+    border-radius: 5px;
+}
+.Alert .success {
+    background-color: rgb(98, 172, 70);
+    padding: 10px;
+    border-radius: 5px;
+}
+.Alert .danger {
+    background-color: rgb(192, 149, 56);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 500px;
+        left: calc(50% - 250px);
+    }
+}
