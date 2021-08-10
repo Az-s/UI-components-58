@@ -11,8 +11,9 @@ const Alert = (props) => {
                     opacity: props.show ? '1' : '0'
                 }}
             >
-                <div className={props.type}>This is a {props.type} type Alert</div>
-                {props.type !== 'danger' ? <button onClick={props.close} dismiss={props.dismiss}>&#10006;</button>: console.log(props.type)}
+                <div className={props.type}>This is a {props.type} type Alert
+                    {props.type === 'warning' ? <button className='WarningBtn' onClick={props.close} dismiss={props.dismiss}>&#10006;</button> : console.log(props.type)}
+                </div>
             </div>
         </>
     )

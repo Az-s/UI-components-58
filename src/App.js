@@ -20,9 +20,9 @@ function App() {
     alert('pressed continue');
   };
 
-  const dismiss = () => {
-   alert('awe')
-  }
+  // const dismiss = () => {
+  //  alert('awe')
+  // }
 
   return (
     <div className="App">
@@ -42,8 +42,7 @@ function App() {
       </Modal>
       <Alert
         show={purchasing}
-        type='warning'
-        dismiss={dismiss}
+        type='warning' // close btn will appear only in warning type
         close={cancelPurchaseHandler}
       />
     </div>
